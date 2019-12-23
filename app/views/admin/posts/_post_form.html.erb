@@ -1,15 +1,22 @@
-<%= form_with(model: [ :admin, @post ]) do |f| %>
-  <div >
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div >
-    <%= f.label :text %>
-    <%= f.text_area :text %>
-  </div>
-  <div >
-    <%= f.check_box :published %>
-    Publish
-  </div>
-  <%= f.submit :Save %>
+<div id="main_content">
+
+  <%= form_with(model: [ :admin, @post ]) do |f| %>
+    <div >
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :text %>
+      <%= f.text_area :text %>
+    </div>
+    <div>
+      <%= f.check_box :published %>
+      Publish
+    </div>
+    <%= f.submit :Save %>
 <% end %>
+</div>
+
+<script>
+  new FroalaEditor('#post_text', {});
+</script>
