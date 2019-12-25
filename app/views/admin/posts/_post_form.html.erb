@@ -1,6 +1,6 @@
 <div id="main_content">
 
-  <%= form_with(model: [ :admin, @post ]) do |f| %>
+  <%= form_with(model: [ :admin, @post ], local: true) do |f| %>
     <div >
       <%= f.label :title %>
       <%= f.text_field :title %>
@@ -13,6 +13,7 @@
       <%= f.check_box :published %>
       Publish
     </div>
+    <%= f.file_field :image %>
     <%= f.submit :Save %>
 <% end %>
 </div>
