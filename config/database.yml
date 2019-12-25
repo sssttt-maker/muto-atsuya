@@ -79,7 +79,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: muto-atsuya_production
   username: muto-atsuya
   password: <%= ENV['MUTO-ATSUYA_DATABASE_PASSWORD'] %>
