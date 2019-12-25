@@ -58,9 +58,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap'
 gem 'jquery-rails'
-gem 'font-awesome-sass', '~> 5.4.1'
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'wysiwyg-rails'
+gem 'froala-editor-sdk'
 
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
+gem 'dotenv-rails'

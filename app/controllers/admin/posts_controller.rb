@@ -1,5 +1,6 @@
 class Admin::PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :hash_init, only: %i[index new create edit]
 
   def new
     @post = current_user.posts.new
@@ -37,5 +38,17 @@ class Admin::PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :text, :published, images: [])
+  end
+
+  def hash_init
+    options = {
+      bucket: 'develop-s3-001',
+      region: 'ap-northeast-1', # japan[Tokyo]
+      keyStart: 'uploads/', # uploads/filename.png
+      acl: 'public-read',
+      accessKey: ENV["aws_access_key_id"],
+      secretKey: ENV["aws_secret_access_key"],
+    }
+    @aws_data = FroalaEditorSDK::S3.data_hash(options)
   end
 end

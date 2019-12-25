@@ -17,6 +17,13 @@
 <% end %>
 </div>
 
+
 <script>
-  new FroalaEditor('#post_text', {});
+$(function() {
+  $('#post_text').froalaEditor({
+    heightMin: 500,
+    heightMax: 1000,
+    imageUploadToS3: <%= @aws_data.to_json.html_safe %>,
+  })
+});
 </script>
