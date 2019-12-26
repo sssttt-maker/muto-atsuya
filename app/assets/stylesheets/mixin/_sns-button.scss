@@ -1,4 +1,9 @@
-
+.sns {
+  &:focus,
+  &:hover {
+    color: $white;
+  }
+}
 
 // twitter
 
@@ -121,7 +126,7 @@
   text-align: center;/*中身を中央寄せ*/
   font-size: 25px;/*文字のサイズ*/
   line-height: 50px;/*高さと合わせる*/
-  background: pink;
+  background: #28a745;
   overflow: hidden;/*はみ出た部分を隠す*/
   text-decoration:none;/*下線は消す*/
 }

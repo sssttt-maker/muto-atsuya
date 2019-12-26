@@ -9,7 +9,7 @@
 <div id="sidebarMenu">
   <ul class="sidebarMenuInner">
     <li><i class="fas fa-home"></i><%= link_to 'Home', root_path %></li>
-    <li><i class="fas fa-chart-bar"></i><%= link_to 'Dashboard', admin_home_path %></li>
+    <li><i class="fas fa-chart-bar"></i><%= link_to 'Dashboard', admin_path %></li>
     <li><i class="fas fa-pen-square"></i><%= link_to 'New Post', new_admin_post_path %></li>
     <li><i class="fas fa-file-code"></i>
       <%= link_to 'All Posts', all_admin_posts_path %>
@@ -19,5 +19,6 @@
       </ul>
     </li>
     <li><i class="fas fa-tags"></i></li>
+    <li><i class="fas fa-sign-out-alt"></i><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
   </ul>
 </div>

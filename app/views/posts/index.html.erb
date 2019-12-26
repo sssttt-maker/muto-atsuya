@@ -9,7 +9,7 @@
           </div>
         <% end %>
         <ul class="details">
-          <li class="date"><%= post.created_at %></li>
+          <li class="date"><%= post.created_at.to_s(:datetime) %></li>
         </ul>
         <div class="description">
           <h1><%= post.title %></h1>

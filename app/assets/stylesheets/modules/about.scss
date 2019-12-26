@@ -1,0 +1,31 @@
+h1, h2, h3, h4{
+  font-family: serif;
+}
+
+.about{
+  font-size: 14px;
+
+  .about-title{
+    font-size: 46px;
+    margin-bottom: 70px;
+  }
+
+  .about-text{
+    font-size: 1.4em;
+    margin-bottom: 50px;
+  }
+
+  .about-img{
+    margin: 0;
+  }
+  .about-info{
+    padding: 0;
+
+    .about-name{
+      font-size: 1.8em;
+    }
+    .about-dl{
+      padding: 10px;
+    }
+  }
+}

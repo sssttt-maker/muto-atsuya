@@ -5,7 +5,8 @@
 @import 'template/clean-blog';
 
 
+@import './modules/root';
 @import "./mixin/blogcard";
 @import './modules/posts';
-@import './modules/root';
+@import './modules/about';
 @import './mixin/sns-button';

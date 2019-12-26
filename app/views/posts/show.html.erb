@@ -3,7 +3,7 @@
     <div class="post">
       <h1 class="post-title"><%= @post.title %></h1>
       <div class="post-date">
-        <%= @post.created_at %>
+        <%= @post.created_at.to_s(:datetime) %>
       </div>
       <div class="post-text">
         <%== @post.text %>
@@ -11,6 +11,3 @@
     </div>
   </div>
 </div>
-
-  <%= link_to '編集', edit_admin_post_path %>
-  <%= link_to '削除', admin_post_path(@post), method: :delete, data: { confirm: "記事「#{@post.title}」を削除します。よろしいですか？"} %>

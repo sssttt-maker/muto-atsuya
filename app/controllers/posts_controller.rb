@@ -5,5 +5,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    if @post.published?
+      @post
+    else
+      authenticate_user!
+      @post
+    end
   end
 end
