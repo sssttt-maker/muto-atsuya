@@ -37,7 +37,7 @@ class Admin::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :published, images: [])
+    params.require(:post).permit(:title, :text, :published, :image)
   end
 
   def hash_init

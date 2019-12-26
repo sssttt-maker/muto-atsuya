@@ -66,3 +66,4 @@ gem 'froala-editor-sdk'
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
 gem 'dotenv-rails'
+gem 'image_processing'
