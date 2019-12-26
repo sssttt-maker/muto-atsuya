@@ -1,0 +1,8 @@
+<tr>
+  <td><%= image_tag(post.mini_thumbnail) %></td>
+  <td><%= truncate(post.title, length: 15) %></td>
+  <td></td>
+  <td><%= post.published %></td>
+  <td><%= post.created_at.to_s(:datetime) %></td>
+  <td><%= link_to '×', admin_post_path(post), method: :delete, data: { confirm: "記事「#{post.title}」を削除します。よろしいですか？"} %></td>
+</tr>

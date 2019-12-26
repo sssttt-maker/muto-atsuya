@@ -1,4 +1,5 @@
 class Admin::PostsController < ApplicationController
+  layout "admin"
   before_action :authenticate_user!
   before_action :hash_init, only: %i[index new create edit]
 
@@ -31,7 +32,19 @@ class Admin::PostsController < ApplicationController
     def destroy
       @post = current_user.posts.find(params[:id])
       @post.destroy
-      redirect_to root_url, notice: "記事「#{@post.title}」を削除しました。"
+      redirect_back(fallback_location: root_path, notice: "記事「#{@post.title}」を削除しました。")
+    end
+
+    def all
+      @posts = current_user.posts.all
+    end
+
+    def published
+      @posts = current_user.posts.published
+    end
+
+    def drafts
+      @posts = current_user.posts.draft
     end
 
   private

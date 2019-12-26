@@ -1,5 +1,5 @@
 <div id="main_content">
-
+  <h2>Edit Post</h2>
   <%= form_with(model: [ :admin, @post ], local: true) do |f| %>
     <div>
       <%= f.label :image %>
@@ -14,7 +14,7 @@
       <%= f.text_area :text %>
     </div>
     <div>
-      <%= f.check_box :published %>
+      <%= f.check_box :published, {}, 'published', 'draft' %>
       Publish
     </div>
     <%= f.submit :Save %>
@@ -25,8 +25,9 @@
 <script>
 $(function() {
   $('#post_text').froalaEditor({
+    toolbarSticky: false,
     heightMin: 500,
-    heightMax: 1000,
+    heightMax: 750,
     imageUploadToS3: <%= @aws_data.to_json.html_safe %>,
   })
 });

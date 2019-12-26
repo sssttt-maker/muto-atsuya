@@ -5,9 +5,11 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   namespace :admin do
-    get 'home/index'
-    resources :posts, only: %i[new create edit update destroy]
+    get '/home', to: 'home#index'
+    resources :posts, only: %i[new create edit update destroy] do
+      get :all, :published, :drafts, on: :collection
+    end
   end
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end
