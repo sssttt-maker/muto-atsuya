@@ -1,8 +1,16 @@
-<div>
-
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
-<%== @post.text %>
-<%= link_to '編集', edit_admin_post_path %>
-<%= link_to '削除', admin_post_path(@post), method: :delete, data: { confirm: "記事「#{@post.title}」を削除します。よろしいですか？"} %>
+<div class="post-wrapper">
+  <div class="row">
+    <div class="post">
+      <h1 class="post-title"><%= @post.title %></h1>
+      <div class="post-date">
+        <%= @post.created_at %>
+      </div>
+      <div class="post-text">
+        <%== @post.text %>
+      </div>
+    </div>
+  </div>
 </div>
+
+  <%= link_to '編集', edit_admin_post_path %>
+  <%= link_to '削除', admin_post_path(@post), method: :delete, data: { confirm: "記事「#{@post.title}」を削除します。よろしいですか？"} %>
