@@ -3,11 +3,13 @@
   <% @posts.each do |post| %>
     <div class="cp_card02 col-md-6">
       <%= link_to post_path(post) do %>
-        <% if post.image.attached? %>
-          <div class="photo photo1">
+        <div class="photo photo1">
+          <% if post.image.attached? %>
             <%= image_tag(post.thumbnail) %>
-          </div>
-        <% end %>
+          <% else %>
+            <img src="/assets/no-image.png" width="200" height="200" />
+          <% end %>
+        </div>
         <ul class="details">
           <li class="date"><%= post.created_at.to_s(:datetime) %></li>
         </ul>

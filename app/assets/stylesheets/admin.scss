@@ -2,7 +2,6 @@
 @import 'font-awesome';
 @import 'bootstrap';
 
-@import 'template/clean-blog';
 @import 'froala_editor.min';
 @import 'froala_style.min';
 @import 'plugins/char_counter.min';
@@ -17,9 +16,11 @@
 @import 'plugins/quick_insert.min';
 @import 'plugins/table.min';
 @import 'plugins/video.min';
+@import 'template/clean-blog';
 
 @import "./mixin/blogcard";
 @import './modules/posts';
 @import './modules/root';
 @import './mixin/sns-button';
 @import './mixin/admin-sidebar';
+@import './admin/categories';

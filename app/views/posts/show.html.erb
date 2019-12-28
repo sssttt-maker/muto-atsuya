@@ -2,6 +2,11 @@
   <div class="row">
     <div class="post">
       <h1 class="post-title"><%= @post.title %></h1>
+        <% if @post.user == current_user %>
+          <span>
+            <%= link_to '編集', edit_admin_post_path(@post) %>
+          </span>
+        <% end %>
       <div class="post-date">
         <%= @post.created_at.to_s(:datetime) %>
       </div>
