@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :posts, only: %i[index show]
   get '/top', to: 'tops#index'
   get '/about', to: 'about#index'
-  root to: 'posts#index'
+  root to: 'tops#index'
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

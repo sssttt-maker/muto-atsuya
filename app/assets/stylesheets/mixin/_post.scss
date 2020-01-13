@@ -1,0 +1,41 @@
+.post {
+  width: 798px;
+  margin: auto;
+  border: 1px solid #000;
+  padding: 2rem 4rem 4rem 4rem;
+  .post-sub {
+    margin-bottom: 30px;
+    .post-title {
+      font-size: 3.5rem;
+      position: relative;
+      .post-edit {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        font-size: 20px;
+      }
+    }
+    .post-category {
+      padding-left: 8px;
+      .item {
+        list-style: none;
+        padding: 3px 5px;
+        display: inline-block;
+        border: 1px solid #000;
+        border-radius: 5px;
+      }
+    }
+    .post-date {
+      display: inline-block;
+      color: grey;
+      font-size: 4;
+    }
+    .post-img {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .post-main {
+    line-height: 2.2;
+  }
+}

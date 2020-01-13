@@ -1,16 +1,28 @@
-<div class="row">
-  <div class="reserve-btn mx-auto">
-    <div class="mb-4">
-      <%= render 'shared/button/twitter' %>
+<div>
+  <div class="items-all clearfix">
+    <div class="item-box">
+      <%= image_tag 'lake.jpg', class: 'item-img' %>
+      <div class="overlay">
+        <%= link_to 'Blog', posts_path, class: 'expand' %>
+      </div>
     </div>
-    <div class="mb-4">
-      <%= render 'shared/button/instagram' %>
+    <div class="item-box">
+      <%= image_tag 'building.jpg', class: 'item-img' %>
+      <div class="overlay">
+        <%= link_to 'Home', posts_path, class: 'expand' %>
+      </div>
     </div>
-    <div class="mb-4">
-      <%= render 'shared/button/youtube' %>
+    <div class="item-box">
+      <%= image_tag 'tree.jpg', class: 'item-img' %>
+      <div class="overlay">
+        <%= link_to 'Gallery', posts_path, class: 'expand' %>
+      </div>
     </div>
-    <div class="mb-4">
-      <%= render 'shared/button/reserve' %>
+    <div class="item-box">
+      <%= image_tag 'sky.jpg', class: 'item-img' %>
+      <div class="overlay">
+        <%= link_to 'Contact', posts_path, class: 'expand' %>
+      </div>
     </div>
   </div>
 </div>

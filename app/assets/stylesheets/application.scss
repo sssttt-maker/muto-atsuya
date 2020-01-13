@@ -1,12 +1,21 @@
+body {
+  text-align: center;
+  font-family: 'Roboto', "Hiragino Kaku Gothic ProN",  sans-serif;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'bootstrap';
 
-@import 'template/clean-blog';
-
-
+@import './modules/base';
 @import './modules/root';
 @import "./mixin/blogcard";
 @import './modules/posts';
 @import './modules/about';
 @import './mixin/sns-button';
+@import './mixin/slider';
+
+// @import 'normalize';
