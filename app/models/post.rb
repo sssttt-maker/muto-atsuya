@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   enum published: { draft: false, published: true }
 
   def thumbnail
-    return self.image.variant(combine_options: { resize: "400x400", extent: "200x200", background: "white", gravity: "center"})
+    return self.image.variant(combine_options: { resize: "480x270", extent: "240x135", background: "white", gravity: "center"})
   end
 
   def custom_thumbnail(a, b, c, d)

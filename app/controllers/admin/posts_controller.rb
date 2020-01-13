@@ -54,14 +54,27 @@ class Admin::PostsController < ApplicationController
   end
 
   def hash_init
-    options = {
-      bucket: 'develop-s3-001',
-      region: 'ap-northeast-1', # japan[Tokyo]
-      keyStart: 'uploads/', # uploads/filename.png
-      acl: 'public-read',
-      accessKey: Rails.application.credentials.dig(:aws, :access_key_id),
-      secretKey: Rails.application.credentials.dig(:aws, :secret_access_key),
-    }
-    @aws_data = FroalaEditorSDK::S3.data_hash(options)
+    case Rails.env
+    when 'development'
+      options = {
+        bucket: 'atsuya-muto.develop',
+        region: 'ap-northeast-1', # japan[Tokyo]
+        keyStart: 'uploads/', # uploads/filename.png
+        acl: 'public-read',
+        accessKey: Rails.application.credentials.dig(:aws, :access_key_id),
+        secretKey: Rails.application.credentials.dig(:aws, :secret_access_key),
+      }
+      @aws_data = FroalaEditorSDK::S3.data_hash(options)
+    when 'production'
+      options = {
+        bucket: 'develop-s3-001',
+        region: 'ap-northeast-1', # japan[Tokyo]
+        keyStart: 'uploads/', # uploads/filename.png
+        acl: 'public-read',
+        accessKey: Rails.application.credentials.dig(:aws, :access_key_id),
+        secretKey: Rails.application.credentials.dig(:aws, :secret_access_key),
+      }
+      @aws_data = FroalaEditorSDK::S3.data_hash(options)
+    end
   end
 end
