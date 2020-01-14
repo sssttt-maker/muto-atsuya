@@ -18,6 +18,7 @@
         <li>-<%= link_to 'Drafts', drafts_admin_posts_path, class: 'li-child' %></li>
       </ul>
     </li>
+    <li><i class="fas fa-camera"></i><%= link_to 'New Gallery', new_admin_gallery_path %></li>
     <li><i class="fas fa-tags"></i><%= link_to 'Category', admin_categories_path %></li>
     <li><i class="fas fa-sign-out-alt"></i><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
   </ul>

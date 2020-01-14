@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   resources :posts, only: %i[index show]
+  resources :galleries, only: %i[index] do
+    collection do
+      get '/image', to: 'galleries#get_url'
+    end
+  end
   get '/top', to: 'tops#index'
   get '/about', to: 'about#index'
   root to: 'tops#index'
@@ -12,6 +17,7 @@ Rails.application.routes.draw do
       get :all, :published, :drafts, on: :collection
     end
     resources :categories, only: %i[index create show destroy]
+    resources :galleries, only: %i[create new destroy]
   end
   devise_for :users
 

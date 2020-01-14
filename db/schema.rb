@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_28_111408) do
+ActiveRecord::Schema.define(version: 2020_01_14_024552) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,22 @@ ActiveRecord::Schema.define(version: 2019_12_28_111408) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "gallery_category_relations", force: :cascade do |t|
+    t.bigint "gallery_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_gallery_category_relations_on_category_id"
+    t.index ["gallery_id", "category_id"], name: "index_gallery_category_relations_on_gallery_id_and_category_id", unique: true
+    t.index ["gallery_id"], name: "index_gallery_category_relations_on_gallery_id"
   end
 
   create_table "post_category_relations", force: :cascade do |t|
@@ -76,6 +92,8 @@ ActiveRecord::Schema.define(version: 2019_12_28_111408) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "gallery_category_relations", "categories"
+  add_foreign_key "gallery_category_relations", "galleries"
   add_foreign_key "post_category_relations", "categories"
   add_foreign_key "post_category_relations", "posts"
   add_foreign_key "posts", "users"

@@ -1,0 +1,20 @@
+<h1>Gallery</h1>
+
+<%= form_with(model: [ :admin, @gallery ], local: true) do |f| %>
+  <div>
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <%= f.label :category %>
+  <%= collection_check_boxes(:gallery, :category_ids, Category.all, :id, :name) do |category| %>
+    <%= category.label do %>
+      <%= category.check_box %>
+      <%= category.text %>
+    <% end %>
+  <% end %>
+  <%= f.submit :send %>
+<% end %>
