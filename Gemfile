@@ -69,3 +69,4 @@ gem 'dotenv-rails'
 gem 'image_processing'
 
 gem 'kaminari'
+gem 'meta-tags'
