@@ -25,4 +25,9 @@
       <%== @post.text %>
     </div>
   </div>
+  <div class="shareList">
+    <%= link_to 'Twitterでシェア', "https://twitter.com/share?url=#{request.url}", class: 'shareList__link icon-twitter', title: 'Twitter', target: '_blank' %>
+    <%= link_to 'Facebookでシェア', "https://www.facebook.com/sharer/sharer.php?u=#{request.url}", class: 'shareList__link icon-facebook', title: 'Facebook', target: '_blank' %>
+    <%= link_to 'LINEでシェア', "http://line.me/R/msg/text/?#{request.url}", class: 'shareList__link icon-line', title: 'LINE', target: '_blank' %>
+  </div>
 </div>

@@ -1,16 +1,40 @@
 .gallery {
   .gallery-wrapper {
     margin: 0 auto;
-    width: 765px;
 
     .modal-open-box {
       cursor: pointer;
-      width: 150px;
       border: 1px solid #fff;
       box-shadow: 0 0 3px;
 
       img {
         width: 100%;
+      }
+    }
+  }
+  @media (max-width: 576px) {
+    .gallery-wrapper {
+      padding: 0 10%;
+      .modal-open-box {
+        width: 33%;
+      }
+    }
+  }
+  @media (min-width: 576px) {
+    .gallery-wrapper {
+      width: 100%;
+      .modal-open-box {
+        width: 30%;
+        margin: 1.6%;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    .gallery-wrapper {
+      width: 690px;
+      .modal-open-box {
+        width: 20%;
+        margin: 2.5%;
       }
     }
   }
