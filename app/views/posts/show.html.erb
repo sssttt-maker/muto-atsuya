@@ -2,10 +2,10 @@
   <div class="post-sub">
     <h1 class="post-title">
       <%= @post.title %>
-      <% if @post.user == current_user %>
-        <span class="post-edit"><%= link_to '編集', edit_admin_post_path(@post) %></span>
-      <% end %>
     </h1>
+    <% if @post.user == current_user %>
+    <span class="post-edit"><%= link_to '編集', edit_admin_post_path(@post) %></span>
+    <% end %>
     <ul class="post-category">
       <% @post.categories.each do |category| %>
         <li class="item">
