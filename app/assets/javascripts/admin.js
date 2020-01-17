@@ -44,3 +44,4 @@
 //= require languages/ja
 
 //= require activestorage
+//= require admin/main

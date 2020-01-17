@@ -1,9 +1,10 @@
 <div id="main_content">
-  <h2>Edit Post</h2>
+  <h2>Post</h2>
   <%= form_with(model: [ :admin, @post ], local: true) do |f| %>
     <div class="form-group">
-      <%= f.label :image %>
-      <%= f.file_field :image, class: 'form-control-file' %>
+      <%= f.label :image, 'thumbnail' %>
+      <%= f.file_field :image, class: 'form-control-file img-upload' %>
+      <div class="preview"></div>
     </div>
     <div class="form-group">
       <%= f.label :title %>
