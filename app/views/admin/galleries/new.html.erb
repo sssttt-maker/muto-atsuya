@@ -16,14 +16,5 @@
     <%= f.label :description %>
     <%= f.text_area :description, rows: 5, class: 'form-control' %>
   </div>
-  <div class="form-group">
-    <%= f.label :category %>
-    <%= collection_check_boxes(:gallery, :category_ids, Category.all, :id, :name) do |category| %>
-      <%= category.label do %>
-        <%= category.check_box %>
-        <%= category.text %>
-      <% end %>
-    <% end %>
-  </div>
   <%= f.submit :send, class: 'submit-btn' %>
 <% end %>

@@ -1,0 +1,13 @@
+<div class="admin-gallery">
+  <h2>Gallery一覧</h2>
+  <div class="list-group">
+    <% @galleries.each do |gallery| %>
+    <div class="list-group-item">
+      <% gallery.images.each do |image| %>
+        <%= image_tag image, height: '100' %>
+      <% end %>
+      <%= link_to '削除', admin_gallery_path(gallery), method: :delete, class: 'delete-btn', data: { confirm: "ギャラリーを削除します。よろしいですか？"} %>
+    </div>
+    <% end %>
+  </div>
+</div>

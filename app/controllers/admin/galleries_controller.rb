@@ -1,6 +1,11 @@
 class Admin::GalleriesController < ApplicationController
   layout 'admin'
   before_action :authenticate_user!
+
+  def index
+    @galleries = Gallery.all
+  end
+
   def new
     @gallery = Gallery.new
   end
@@ -13,6 +18,12 @@ class Admin::GalleriesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @gallery = Gallery.find(params[:id])
+    @gallery.destroy
+    redirect_back(fallback_location: root_path, notice: "ギャラリーを削除しました。")
   end
 
   private
