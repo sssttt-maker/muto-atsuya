@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       post :upload_image, on: :collection
     end
     resources :categories, only: %i[index create show destroy]
-    resources :galleries, only: %i[create new destroy]
+    resources :galleries, only: %i[index create new destroy]
   end
   devise_for :users
 

@@ -2,7 +2,8 @@ $(function() {
   $('[data-provider="summernote"]').each(function() {
     $(this).summernote({
       lang: "ja-JP",
-      height: 300,
+
+      height: 600,
       callbacks: {
         onImageUpload: function(files, editor, welEditable) {
           sendFile(files[0], editor, welEditable);
