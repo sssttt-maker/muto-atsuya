@@ -60,8 +60,6 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'font-awesome-sass'
 gem 'devise'
-gem 'wysiwyg-rails'
-gem 'froala-editor-sdk'
 
 gem 'mini_magick'
 gem 'aws-sdk-s3', require: false
@@ -71,3 +69,5 @@ gem 'image_processing'
 gem 'kaminari'
 gem 'meta-tags'
 gem 'google-analytics-rails'
+
+gem 'summernote-rails', '~> 0.8.12.0'
