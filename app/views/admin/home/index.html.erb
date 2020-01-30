@@ -5,17 +5,31 @@
     </div>
     <div class="admin-main--body">
       <div class="row dashboard">
-        <div class="col-md-4 dashboard-item">
-          <h2>Posts(<%= @posts.count %>)</h2>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to all_admin_posts_path do %>
+            Posts(<%= @posts.count %>)
+          <% end %>
         </div>
-        <div class="col-md-4 dashboard-item">
-          <h2>Published(<%= @published.count %>)</h2>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to published_admin_posts_path do %>
+            Published(<%= @published.count %>)
+          <% end %>
         </div>
-        <div class="col-md-4 dashboard-item">
-          <h2>Drafts(<%= @drafts.count %>)</h2>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to drafts_admin_posts_path do %>
+            Drafts(<%= @drafts.count %>)
+          <% end %>
         </div>
-        <div class="col-md-4 dashboard-item">
-          <h2>Categories(<%= @categories.count %>)</h2>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to admin_categories_path do %>
+            Categories(<%= @categories.count %>)
+          <% end %>
+        </div>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to 'New Gallery', new_admin_gallery_path %>
+        </div>
+        <div class="col-md-3 dashboard-item mx-3 my-4 px-2 py-2">
+          <%= link_to 'New Post', new_admin_post_path %>
         </div>
       </div>
     </div>

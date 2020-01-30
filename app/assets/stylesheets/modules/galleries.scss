@@ -67,6 +67,11 @@
         img {
           margin: auto;
         }
+        @media (max-width: 768px) {
+          img {
+            width: 100%;
+          }
+        }
       }
       .modal-description {
         margin: 10px 10px 30px;

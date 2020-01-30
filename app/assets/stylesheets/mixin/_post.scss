@@ -3,7 +3,7 @@
   .post-sub {
     margin-bottom: 30px;
     .post-title {
-      font-size: 2rem;
+      font-size: 1.8rem;
       position: relative;
       word-break: break-all;
     }
@@ -36,6 +36,16 @@
       line-height: 28.35px;
       img {
         max-width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .post {
+    padding: 2rem 0 4rem;
+    .post-sub {
+      .post-title {
+        font-size: 1.3rem;
       }
     }
   }

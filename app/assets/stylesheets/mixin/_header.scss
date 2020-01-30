@@ -27,4 +27,23 @@ nav {
       font-size: 1.5rem;
     }
   }
+  .toUnder {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    background: #151515;
+    .header-content {
+      .site-title {
+        font-size: 2.5rem;
+      }
+    }
+    .toUnder {
+      display: inline-block;
+      font-size: 3rem;
+    }
+  }
+
 }

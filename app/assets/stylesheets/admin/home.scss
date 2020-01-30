@@ -1,3 +1,6 @@
-// Place all the styles related to the Admin::Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.dashboard-item {
+  font-size: 1.5rem;
+  text-align: center;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}

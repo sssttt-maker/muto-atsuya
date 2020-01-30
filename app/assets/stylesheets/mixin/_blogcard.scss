@@ -46,23 +46,34 @@
     font-size: 1rem;
   }
 }
-.card-box:hover .card-details {
-  transform: translateY(0);
+
+@media (min-width: 768px) {
+  a.disable {
+    pointer-events: none;
+  }
+  .card-box:hover .card-details {
+    transform: translateY(0);
+  }
+  .card-btn::after {
+    position: absolute;
+    top: 50%;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f061';
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    opacity: 0;
+  }
+  .card-btn:hover::after {
+    -webkit-transform: translate(5px, -50%);
+    transform: translate(5px, -50%);
+    opacity: 1;
+  }
 }
-.card-btn::after {
-  position: absolute;
-  top: 50%;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: '\f061';
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  -webkit-transform: translate(0, -50%);
-  transform: translate(0, -50%);
-  opacity: 0;
-}
-.card-btn:hover::after {
--webkit-transform: translate(5px, -50%);
-transform: translate(5px, -50%);
-opacity: 1;
+@media (min-width: 992px) {
+  .card-description {
+    font-size: 12px !important;
+  }
 }
