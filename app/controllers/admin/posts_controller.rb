@@ -67,7 +67,7 @@ class Admin::PostsController < ApplicationController
       @aws_data = FroalaEditorSDK::S3.data_hash(options)
     when 'production'
       options = {
-        bucket: 'develop-s3-001',
+        bucket: 'mutoatsuya-production',
         region: 'ap-northeast-1', # japan[Tokyo]
         keyStart: 'uploads/', # uploads/filename.png
         acl: 'public-read',

@@ -1,5 +1,11 @@
 <h1>Gallery</h1>
-
+<% if @gallery.errors.present? %>
+  <ul id="error_explanation">
+    <% @gallery.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <%= form_with(model: [ :admin, @gallery ], local: true) do |f| %>
   <div class="form-group">
     <%= f.label :images %>
