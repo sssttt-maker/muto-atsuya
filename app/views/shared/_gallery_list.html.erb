@@ -2,7 +2,7 @@
   <div class="gallery-wrapper row">
     <% @galleries.each do |gallery| %>
     <div class="modal-open-box" data-id="<%= gallery.id %>">
-      <%= image_tag(gallery.images_thumbnail) %>
+      <%= image_tag(gallery.images_thumbnail, class: 'img-thumbnail') %>
     </div>
     <% end %>
   </div>

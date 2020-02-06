@@ -1,23 +1,73 @@
 <section class="gallery">
-  <h2>Gallery</h2>
-  <div class="gallery-wrap row">
-    <% @galleries.each do |gallery| %>
-      <div class="gallery-img col-3">
-        <%= image_tag(gallery.images_thumbnail) %>
-      </div>
-    <% end %>
-  </div>
-  <div class="view-all">
-    View all
+  <div class="container">
+    <h2 class="heading">Gallery</h2>
+    <div class="gallery-wrap">
+      <ul class="gallery-slide">
+        <% @galleries.each do |gallery| %>
+        <li class="gallery-img">
+          <%= image_tag gallery.images[0].variant(combine_options: { resize: "300x400", extent: "300x400", background: "white", gravity: "center"}) %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="more-btn">
+      <%= link_to 'View All', galleries_path %>
+    </div>
   </div>
 </section>
 <section class="top-blog">
-  <h2>New Posts</h2>
-  <% @posts.each do |post| %>
-    <%= image_tag post.image %>
-    <%= post.title %>
-  <% end %>
+  <div class="container">
+    <h2 class="heading">New Posts</h2>
+    <div class="post-wrap row">
+      <% @posts.each do |post| %>
+      <div class="post-img col-md-4">
+        <%= link_to post_path(post) do %>
+        <%= image_tag(post.custom_thumbnail(345, 230, 345, 230), class: 'img-fluid') %>
+        <p>
+          <%= post.title %>
+        </p>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+    <div class="more-btn">
+      <%= link_to 'View All', posts_path %>
+    </div>
+  </div>
 </section>
-<section class="top-menu" style="background-color: ">
-  <h2>Menu</h2>
+<section class="top-info" style="background-color: ">
+  <div class="container">
+    <h2 class="heading">Info</h2>
+    <div class="info-wrap row">
+      <div class="salon-img col-md-5">
+        <img class="img-fluid" src='assets/produce.jpg' alt='サロンの写真' />
+      </div>
+      <div class="salon-info col-md-7">
+        <h3>Produce 相模大野店</h3>
+        <p>神奈川県相模原市南区相模大野４‐５‐１７　ロビーファイブ１Ｆ</p>
+        <table class="table">
+          <tr>
+            <th>営業時間</th><td>10:00~19:00</td>
+          </tr>
+          <tr>
+            <th>個人休み</th><td>木曜日</td>
+          </tr>
+        </table>
+        <div class="more-btn">
+          <%= link_to 'menu', menu_path %>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<script>
+  $('.gallery-slide').slick({
+    autoplay: true,
+    dots: true,
+    fade: false,
+    slidesToShow: 3,
+    centerMode: true,
+    variableWidth: true,
+  })
+</script>
