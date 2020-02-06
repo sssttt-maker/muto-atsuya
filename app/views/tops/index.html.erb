@@ -1,28 +1,23 @@
-<div>
-  <div class="items-all clearfix">
-    <div class="item-box">
-      <%= image_tag 'blog.jpg', class: 'item-img' %>
-      <div class="overlay">
-        <%= link_to 'Blog', posts_path, class: 'expand' %>
+<section class="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery-wrap row">
+    <% @galleries.each do |gallery| %>
+      <div class="gallery-img col-3">
+        <%= image_tag(gallery.images_thumbnail) %>
       </div>
-    </div>
-    <div class="item-box">
-      <%= image_tag 'about.jpg', class: 'item-img' %>
-      <div class="overlay">
-        <%= link_to 'About', about_path, class: 'expand' %>
-      </div>
-    </div>
-    <div class="item-box">
-      <%= image_tag 'gallery.jpg', class: 'item-img' %>
-      <div class="overlay">
-        <%= link_to 'Gallery', galleries_path, class: 'expand' %>
-      </div>
-    </div>
-    <div class="item-box">
-      <%= image_tag 'menu.jpg', class: 'item-img' %>
-      <div class="overlay">
-        <%= link_to 'Menu', menu_path, class: 'expand' %>
-      </div>
-    </div>
+    <% end %>
   </div>
-</div>
+  <div class="view-all">
+    View all
+  </div>
+</section>
+<section class="top-blog">
+  <h2>New Posts</h2>
+  <% @posts.each do |post| %>
+    <%= image_tag post.image %>
+    <%= post.title %>
+  <% end %>
+</section>
+<section class="top-menu" style="background-color: ">
+  <h2>Menu</h2>
+</section>
