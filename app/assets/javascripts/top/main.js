@@ -26,9 +26,9 @@ $(function() {
   $(window).scroll(function() {
     var scrollPos = $(window).scrollTop();
     if(scrollPos > windowHeight) {
-      $('.top-nav').addClass('bg-dark');
+      $('.top-nav').addClass('bg-light');
     } else {
-      $('.top-nav').removeClass('bg-dark');
+      $('.top-nav').removeClass('bg-light');
     }
   });
 

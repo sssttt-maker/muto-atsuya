@@ -1,0 +1,28 @@
+.menu-main {
+  max-width: 760px;
+  margin: auto;
+  font-size: 12px;
+  .menu-box {
+    padding: 15px 0;
+    border-top: 2px solid #000;
+    h2 {
+      font-family: 'Roboto', sans-serif;
+    }
+  }
+  .table {
+    table-layout: fixed;
+    th, td {
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-main {
+    font-size: 10px;
+    .table {
+      th, td {
+        padding-left: 10%;
+      }
+    }
+  }
+}

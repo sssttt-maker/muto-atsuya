@@ -1,79 +1,31 @@
-
-.card-wrapper {
-  font-size: 0;
+.posts-main {
+  margin: auto;
   .card-box {
-    position: relative;
-    border-radius: 3px;
-    display: inline-block;
-    padding: 0;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
-    border: 2px solid #fff;
-    .card-img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      position: relative;
-      top: 0;
+    padding: 15px 0;
+    &:hover {
+      opacity: 0.7;
     }
-    .card-details {
-      position: absolute;
-      padding: 5px;
-      width: 100%;
-      height: 120px;
-      bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      font-size: 16px;
-      color: #fff;
-      transform: translateY(40px);
-      transition: transform 0.3s;
-      .card-description {
-        font-size: 14px;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 5px;
+    .card-description {
+      padding: 20px;
+      .post-date {
+        background-color: #111111;
+        color: #fff;
+        padding: 0 10px;
       }
-      .card-title {
-        height: 48px;
+      .post-title {
+        margin: 20px 0;
+        font-size: 1.2rem;
       }
-      .btn-wrap {
-        text-align: center;
-        position: relative;
-      }
+
     }
   }
-  .paginate {
-    font-size: 1rem;
+  img {
+    width: 100%;
   }
 }
 
 @media (min-width: 768px) {
-  a.disable {
-    pointer-events: none;
-  }
-  .card-box:hover .card-details {
-    transform: translateY(0);
-  }
-  .card-btn::after {
-    position: absolute;
-    top: 50%;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: '\f061';
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    opacity: 0;
-  }
-  .card-btn:hover::after {
-    -webkit-transform: translate(5px, -50%);
-    transform: translate(5px, -50%);
-    opacity: 1;
-  }
-}
-@media (min-width: 992px) {
-  .card-description {
-    font-size: 12px !important;
+  .posts-main {
+    width: 760px;
   }
 }
