@@ -2,6 +2,9 @@
   margin: auto;
   .card-box {
     padding: 15px 0;
+    &:hover {
+      opacity: 0.7;
+    }
     .card-description {
       padding: 20px;
       .post-date {

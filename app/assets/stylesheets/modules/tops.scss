@@ -2,13 +2,25 @@
 @import '../mixin/footer';
 
 body {
-  font-family: 'Petit Formal Script', cursive;
   a {
     color: #000;
     text-decoration: none;
+    &:hover {
+      color: inherit;
+    }
   }
 }
+h1, h2, h3 {
+  font-family: 'Petit Formal Script', cursive;
+}
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-family: 'Petit Formal Script', cursive;
+}
 
+.header {
+  font-family: 'Petit Formal Script', cursive;
+}
 .container {
   text-align: center;
 }
@@ -90,4 +102,10 @@ section {
 }
 
 .top-info {
+  h3 {
+    font-family: 'Roboto', sans-serif;
+  }
+  .salon-img {
+    margin-bottom: 20px;
+  }
 }

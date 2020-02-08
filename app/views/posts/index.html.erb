@@ -1,26 +1,26 @@
-<div class="background-img"></div>
-<div class="main">
-  <h1 class="page-title">Blog</h1>
-  <div class="posts-main">
-    <% @posts.each do |post| %>
-      <%= link_to post_path(post) do %>
-        <div class="card-box row border-bottom">
-          <div class="card-img col-md-5">
-            <% if post.image.attached? %>
-              <%= image_tag(post.thumbnail, class: 'img-fluid') %>
-            <% else %>
-              <img src="/assets/no-image.png" class="card-img"/>
-            <% end %>
-          </div>
-          <div class="card-description col-md-7">
-            <span class="post-date"><%= post.updated_at.to_s(:datetime) %></span>
-            <h3 class="post-title"><%= post.title %></h3>
-          </div>
+<div class="background-img">
+  <!-- <img src="assets/back-img.jpg" /> -->
+</div>
+<h1 class="page-title">Blog</h1>
+<div class="posts-main">
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post) do %>
+      <div class="card-box row border-bottom border-dark">
+        <div class="card-img col-md-5">
+          <% if post.image.attached? %>
+            <%= image_tag(post.thumbnail, class: 'img-fluid') %>
+          <% else %>
+            <img src="/assets/no-image.png" class="card-img"/>
+          <% end %>
         </div>
-      <% end %>
+        <div class="card-description col-md-7">
+          <span class="post-date"><%= post.updated_at.to_s(:datetime) %></span>
+          <h3 class="post-title"><%= post.title %></h3>
+        </div>
+      </div>
     <% end %>
-    <div class="paginate">
-      <%= paginate @posts %>
-    </div>
+  <% end %>
+  <div class="paginate">
+    <%= paginate @posts %>
   </div>
 </div>
